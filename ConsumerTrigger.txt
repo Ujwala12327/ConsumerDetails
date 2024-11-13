@@ -1,0 +1,4 @@
+trigger ConsumerTrigger1 on consumer__c (before insert) {
+  	  if(trigger.isAfter && trigger.isInsert) {
+        ConsumerRecord.sendEmailNotification(trigger.new);    }
+}
